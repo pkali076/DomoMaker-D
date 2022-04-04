@@ -44,18 +44,19 @@ const handleSignup = (e) => {
 
 const LoginWindow = (props) => {
     return(
-        <form id ="loginForm"
+        <form id="loginForm"
             name="loginForm"
-                onSubmit={handleLogin}
-                action="/login"
-                method="POST"
-                className="mainForm">
-                <label htmlFor="username">Username: </label>
-                <input id="user" type="text" name="username" placeholder="username" />
-                <label htmlFor="pass">Password: </label>
-                <input id="pass" type="password" name="pass" placeholder="password" />
-                <input id="_csrf" type="hidden" name="_csrf" value={props.csrf} />
-                <input className="formSubmit" type="submit" value="Sign in" />
+            onSubmit={handleLogin}
+            action="/login"
+            method="POST"
+            className="mainForm"
+        >
+            <label htmlFor="username">Username: </label>
+            <input id="user" type="text" name="username" placeholder="username" />
+            <label htmlFor="pass">Password: </label>
+            <input id="pass" type="password" name="pass" placeholder="password" />
+            <input id="_csrf" type="hidden" name="_csrf" value={props.csrf} />
+            <input className="formSubmit" type="submit" value="Sign in" />
         </form>
     );
 };
@@ -71,7 +72,7 @@ const SignupWindow = (props) => {
             <label htmlFor="username">Username: </label>
             <input id="user" type="text" name="username" placeholder="username" />
             <label htmlFor="pass">Password: </label>
-            <input id="pass" type="password" name="pass" palceholder="password" />
+            <input id="pass" type="password" name="pass" placeholder="password" />
             <label htmlFor="pass2">Password: </label>
             <input id="pass2" type="password" name="pass2" placeholder="retype password" />
             <input id="_csrf" type="hidden" name="_csrf" value={props.csrf} />
@@ -91,19 +92,19 @@ const init = async () => {
     loginButton.addEventListener('click', (e) => {
         e.preventDefault();
         ReactDOM.render(<LoginWindow csrf={data.csrfToken} />,
-        document.getElementById('content'));
+            document.getElementById('content'));
         return false;
     });
 
     signupButton.addEventListener('click', (e) => {
         e.preventDefault();
         ReactDOM.render(<SignupWindow csrf={data.csrfToken} />,
-        document.getElementById('content'));
+            document.getElementById('content'));
         return false;
     });
 
     ReactDOM.render(<LoginWindow csrf={data.csrfToken} />,
-    document.getElementById('content'));
+        document.getElementById('content'));
 };
 
 window.onload = init;
