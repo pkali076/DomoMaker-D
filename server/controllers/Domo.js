@@ -1,6 +1,6 @@
 const models = require('../models');
 const Domo = models.Domo;
-//const DomoModel = require('../models/Domo');
+const DomoModel = require('../models/Domo');
 
 //const { Domo } = models;
 
